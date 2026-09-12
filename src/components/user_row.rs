@@ -26,8 +26,8 @@ impl Component for AvatarIcon {
   fn render(&self) -> impl IntoElement {
     let (url, border) = avatar_url_and_border(&self.user);
     rect()
-      .width(Size::px(35.))
-      .height(Size::px(35.))
+      .width(Size::px(35_f32))
+      .height(Size::px(35_f32))
       .margin(Gaps::new(0., 6., 0., 8.))
       .corner_radius(CornerRadius::new_all(25.))
       .child(
@@ -60,7 +60,7 @@ impl Component for UserLabel {
       .direction(Direction::Horizontal)
       .main_align(Alignment::Center)
       .cross_align(Alignment::Center)
-      .height(Size::percent(70.))
+      .height(Size::percent(70_f32))
       .background(
         self
           .background
@@ -84,32 +84,32 @@ impl Component for UserLabel {
       .maybe(is_muted, |el| {
         el.child(
           svg(MUTED_SVG)
-            .width(Size::px(16.))
-            .height(Size::px(16.))
+            .width(Size::px(16_f32))
+            .height(Size::px(16_f32))
             .margin(Gaps::new(0., 6., 0., 2.)),
         )
       })
       .maybe(is_deafened, |el| {
         el.child(
           svg(DEAFENED_SVG)
-            .width(Size::px(16.))
-            .height(Size::px(16.))
+            .width(Size::px(16_f32))
+            .height(Size::px(16_f32))
             .margin(Gaps::new(0., 6., 0., 2.)),
         )
       })
       .maybe(user.streaming, |el| {
         el.child(
           svg(STREAMING_SVG)
-            .width(Size::px(16.))
-            .height(Size::px(16.))
+            .width(Size::px(16_f32))
+            .height(Size::px(16_f32))
             .margin(Gaps::new(0., 6., 0., 0.)),
         )
       })
       .maybe(user.camera, |el| {
         el.child(
           svg(CAMERA_SVG)
-            .width(Size::px(16.))
-            .height(Size::px(16.))
+            .width(Size::px(16_f32))
+            .height(Size::px(16_f32))
             .margin(Gaps::new(0., 6., 0., 0.)),
         )
       })
@@ -145,7 +145,7 @@ impl Component for UserRow {
     let is_speaking = self.user.voice_state == UserVoiceState::Speaking;
 
     let opacity = if !is_speaking && (self.is_voice_semitransparent && !self.is_open) {
-      0.5
+      0.5_f32
     } else {
       1.0
     };
@@ -173,9 +173,9 @@ impl Component for UserRow {
       .direction(Direction::Horizontal)
       .main_align(if is_right_aligned { Alignment::End } else { Alignment::Start })
       .cross_align(Alignment::Center)
-      .width(Size::px(200.))
+      .width(Size::px(200_f32))
       //  .width(Size::fill())
-      .height(Size::px(50.))
+      .height(Size::px(50_f32))
       .padding(Gaps::new_all(0.3))
       .margin(Gaps::new(2.0, 0.0, 2.0, 2.0))
       .corner_radius(CornerRadius::new_all(6.))

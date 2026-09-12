@@ -47,11 +47,11 @@ impl Component for SoundButton {
       .direction(Direction::Horizontal)
       .cross_align(Alignment::Center)
       .main_align(Alignment::Center)
-      .width(Size::percent(33.3))
-      .height(Size::px(40.))
+      .width(Size::percent(33.3_f32))
+      .height(Size::px(40_f32))
       .margin(Gaps::new_all(2.))
       .corner_radius(CornerRadius::new_all(6.))
-      .maybe(!available, |el| el.opacity(0.4))
+      .maybe(!available, |el| el.opacity(0.4_f32))
       .background(if *hovered.read() {
         colors::LIGHT_GRAY
       } else {
@@ -147,7 +147,7 @@ impl Component for Soundboard {
         .direction(Direction::Vertical)
         .background(colors::GRAY)
         .corner_radius(CornerRadius::new_all(10.))
-        .max_width(Size::px(400.))
+        .max_width(Size::px(400_f32))
         .margin(Gaps::new(0., 0., 8., 0.))
         .padding(Gaps::new_all(16.))
         .main_align(Alignment::Center)
@@ -199,8 +199,8 @@ impl Component for Soundboard {
         .direction(Direction::Vertical)
         .background(colors::GRAY)
         .corner_radius(CornerRadius::new_all(10.))
-        .max_width(Size::px(400.))
-        .height(Size::px(220.))
+        .max_width(Size::px(400_f32))
+        .height(Size::px(220_f32))
         .margin(Gaps::new(0., 0., 8., 0.))
         .overflow(Overflow::Clip)
         .on_wheel(move |e: Event<WheelEventData>| {

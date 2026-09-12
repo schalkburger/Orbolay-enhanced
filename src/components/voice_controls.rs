@@ -51,7 +51,7 @@ impl Component for ControlButton {
       .main_align(Alignment::Center)
       .cross_align(Alignment::Center)
       .height(Size::fill())
-      .width(Size::percent(20.))
+      .width(Size::percent(20_f32))
       .margin(Gaps::new(2., 2., 2., 2.))
       .padding(Gaps::new_all(4.))
       .corner_radius(CornerRadius::new_all(6.))
@@ -73,7 +73,7 @@ impl Component for ControlButton {
         *hovered.write() = false;
         Cursor::set(CursorIcon::default());
       })
-      .child(svg(icon).width(Size::px(18.)).height(Size::px(18.)))
+      .child(svg(icon).width(Size::px(18_f32)).height(Size::px(18_f32)))
   }
 }
 
@@ -106,8 +106,8 @@ impl Component for VoiceControls {
       .main_align(Alignment::Center)
       .cross_align(Alignment::Center)
       .height(Size::auto())
-      .max_height(Size::px(40.))
-      .max_width(Size::px(300.))
+      .max_height(Size::px(40_f32))
+      .max_width(Size::px(300_f32))
       .background(colors::DARKER_GRAY)
       .corner_radius(CornerRadius::new_all(8.))
       .child(ControlButton {

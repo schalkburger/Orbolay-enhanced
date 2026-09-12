@@ -25,6 +25,6 @@ impl Component for InputControl {
       }
     });
 
-    Input::new(value).a11y_id(id).width(Size::px(75.))
+    Input::new(value).a11y_id(id).width(Size::px(75_f32))
   }
 }

@@ -29,7 +29,7 @@ impl Component for MessageRow {
       .direction(Direction::Horizontal)
       .main_align(Alignment::Start)
       .cross_align(Alignment::Start)
-      .max_width(Size::px(400.))
+      .max_width(Size::px(400_f32))
       .margin(Gaps::new_all(6.))
       .padding(Gaps::new_all(10.))
       .corner_radius(CornerRadius::new_all(10.))
@@ -55,8 +55,8 @@ impl Component for MessageRow {
       })
       .child(
         avatar_image(&self.message.icon, None)
-          .width(Size::px(42.))
-          .height(Size::px(42.))
+          .width(Size::px(42_f32))
+          .height(Size::px(42_f32))
           .margin(Gaps::new(0., 10., 0., 0.)),
       )
       .child(

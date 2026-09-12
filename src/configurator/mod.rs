@@ -482,7 +482,7 @@ fn configurator(shared: SharedAppState, redraw_tx: flume::Sender<()>) -> impl In
 fn divider() -> impl IntoElement {
   rect()
     .width(Size::fill())
-    .height(Size::px(1.))
+    .height(Size::px(1_f32))
     .padding(16.)
     .background(LIGHT_GRAY)
 }

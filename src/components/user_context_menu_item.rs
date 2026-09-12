@@ -51,7 +51,7 @@ impl Component for UserContextMenuItem {
         rect()
           .direction(Direction::Vertical)
           .cross_align(Alignment::Start)
-          .width(Size::px(160.))
+          .width(Size::px(160_f32))
           .child(
             rect()
               .direction(Direction::Horizontal)

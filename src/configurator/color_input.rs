@@ -30,6 +30,6 @@ impl Component for ColorInputControl {
       on_change.call(to_argb_hex(c));
     })
     .value(current)
-    .width(Size::px(180.))
+    .width(Size::px(180_f32))
   }
 }

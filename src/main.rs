@@ -394,9 +394,9 @@ fn app() -> impl IntoElement {
           .direction(Direction::Vertical)
           .main_align(Alignment::End)
           .cross_align(Alignment::Center)
-          .height(Size::percent(90.))
+          .height(Size::percent(90_f32))
           .width(Size::fill())
-          .opacity(if *soundboard_open.read() { 1.0 } else { 0.0 })
+          .opacity(if *soundboard_open.read() { 1.0_f32 } else { 0.0 })
           .child(Soundboard { app_state }),
       )
     })
