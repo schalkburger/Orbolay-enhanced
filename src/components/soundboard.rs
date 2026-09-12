@@ -142,6 +142,8 @@ impl Component for Soundboard {
         .then(b.cmp(a))
     });
 
+    let mut scroll_y = use_state(|| 0_f32);
+
     if guilds.is_empty() {
       rect()
         .direction(Direction::Vertical)
@@ -159,8 +161,6 @@ impl Component for Soundboard {
             .text("No sounds available"),
         )
     } else {
-      let mut scroll_y = use_state(|| 0_f32);
-
       let content = guilds.into_iter().fold(
         rect()
           .direction(Direction::Vertical)
